@@ -27,5 +27,7 @@ RUN curl -L https://github.com/docker/compose/releases/download/1.20.1/docker-co
 
 RUN chmod +x /usr/local/bin/docker-compose
 
+RUN usermod -aG docker ${user}
+
 USER ${user}
 
