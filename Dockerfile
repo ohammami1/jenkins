@@ -29,5 +29,13 @@ RUN chmod +x /usr/local/bin/docker-compose
 
 RUN usermod -aG docker jenkins
 
+# Install daemonize
+RUN cd /tmp
+RUN git clone https://github.com/bmc/daemonize
+RUN cd daemonize && \
+	sh configure && \
+	make && \
+	make install
+
 USER jenkins
 
